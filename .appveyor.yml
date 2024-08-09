@@ -9,10 +9,10 @@ install:
   - pip install gunicorn
   - pip install requests
   - pip3 install flask-bootstrap
-- pip3 install flask-wtf
-- pip3 install pillow
-- pip3 install tensorflow==2.17.0
-- pip3 install keras 
+  - pip3 install flask-wtf
+  - pip3 install pillow
+  - pip3 install tensorflow==2.17.0
+  - pip3 install keras 
 build_script:
   - cd flaskapp
   - powershell -ExecutionPolicy Bypass -File ./st.ps1
