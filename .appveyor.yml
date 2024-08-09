@@ -4,8 +4,14 @@ environment:
   matrix:
     - TOXENV: py38
 
+before_build:
+  - ps: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+  - bash: ./flaskapp/st.sh
+
 install:
   - pip install flask
+  - pip install gunicorn
 
 build_script:
-  - python ./flaskapp/some_app.py
+  - cd flaskapp
+  - ./st.sh
