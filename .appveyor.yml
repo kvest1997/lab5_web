@@ -4,9 +4,10 @@ before_build:
   - bash: ./flaskapp/st.sh
 
 install:
+  - python -m pip install --upgrade pip
   - pip install flask
   - pip install gunicorn
-  - pip3 install requests
+  - pip install requests
 build_script:
   - cd flaskapp
   - ./st.sh
