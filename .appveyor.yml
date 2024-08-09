@@ -11,7 +11,7 @@ before_build:
 install:
   - pip install flask
   - pip install gunicorn
-
+  - pip3 install requests
 build_script:
   - cd flaskapp
   - ./st.sh
