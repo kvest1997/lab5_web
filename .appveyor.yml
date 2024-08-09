@@ -1,8 +1,5 @@
 version: 1.0.{build}
-
-environment:
-  matrix:
-    - TOXENV: py38
+language: python
 
 before_build:
   - bash: ./flaskapp/st.sh
