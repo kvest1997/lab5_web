@@ -10,4 +10,4 @@ install:
   - pip install requests
 build_script:
   - cd flaskapp
-  - ./st.sh
+  - powershell -ExecutionPolicy Bypass -File ./st.ps1
