@@ -5,7 +5,6 @@ environment:
     - TOXENV: py38
 
 before_build:
-  - ps: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
   - bash: ./flaskapp/st.sh
 
 install:
