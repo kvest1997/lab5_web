@@ -1,5 +1,4 @@
 version: 1.0.{build}
-language: python
 
 before_build:
   - bash: ./flaskapp/st.sh
