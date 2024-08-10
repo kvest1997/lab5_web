@@ -1,18 +1,18 @@
 version: 1.0.{build}
+image: Ubuntu-latest
 
-before_build:
-  - bash: ./flaskapp/st.sh
+environment:
+  matrix:
+    - PYTHON: "3.11"
+    - PYTHON: "3.10"
+
+before_install:
+  - cd flaskapp
+  - chmod +x st.sh
 
 install:
-  - python -m pip install --upgrade pip
-  - pip install flask
-  - pip install gunicorn
-  - pip install requests
-  - pip3 install flask-bootstrap
-  - pip3 install flask-wtf
-  - pip3 install pillow
-  - pip3 install tensorflow
-  - pip3 install keras 
+  - pip install -r ../requirements.txt
+  - pip install requests gunicorn
+
 build_script:
-  - cd flaskapp
-  - powershell -ExecutionPolicy Bypass -File ./st.ps1
+  - ./st.sh
